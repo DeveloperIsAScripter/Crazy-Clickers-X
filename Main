@@ -13,7 +13,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
     })
 
     FarmTab:AddToggle({
-        Name = "Pet Create",
+        Name = "Create Best Summer Pet",
         Default = false,
         Callback = function(Value)
             _G.autoTap = Value
@@ -57,6 +57,57 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 
                     game:GetService("ReplicatedStorage"):WaitForChild("GameClient"):WaitForChild("Events"):WaitForChild("RemoteFunction"):WaitForChild("HandlePet"):InvokeServer(unpack(args))
 
+                    wait(0.1) -- Optional: Adjust the wait time between each pet creation
+                end
+            end
+        end
+    })
+
+    FarmTab:AddToggle({
+        Name = "Create Best Pet",
+        Default = false,
+        Callback = function(Value)
+            _G.autoTap = Value
+            if _G.autoTap then
+                while _G.autoTap do
+                    -- Your code to repeatedly create pets here
+                    local args = {
+                        [1] = "CraftPet",
+                        [2] = {
+                            [1] = "Spooky Dominus",
+                            [2] = "Gold",
+                            [3] = {
+                                [1] = {
+                                    ["Locked"] = false,
+                                    ["PetID"] = "442139576-1093",
+                                    ["PetName"] = "Spooky Dominus"
+                                },
+                                [2] = {
+                                    ["Locked"] = false,
+                                    ["PetID"] = "442139576-1094",
+                                    ["PetName"] = "Spooky Dominus"
+                                },
+                                [3] = {
+                                    ["Locked"] = false,
+                                    ["PetID"] = "442139576-1095",
+                                    ["PetName"] = "Spooky Dominus"
+                                },
+                                [4] = {
+                                    ["Locked"] = false,
+                                    ["PetID"] = "442139576-1096",
+                                    ["PetName"] = "Spooky Dominus"
+                                },
+                                [5] = {
+                                    ["Locked"] = false,
+                                    ["PetID"] = "442139576-1097",
+                                    ["PetName"] = "Spooky Dominus"
+                                }
+                            }
+                        }
+                    }
+                    
+                    game:GetService("ReplicatedStorage"):WaitForChild("GameClient"):WaitForChild("Events"):WaitForChild("RemoteFunction"):WaitForChild("HandlePet"):InvokeServer(unpack(args))
+                    
                     wait(0.1) -- Optional: Adjust the wait time between each pet creation
                 end
             end
