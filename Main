@@ -11,7 +11,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
         Icon = "rbxassetid://4483345998",
         PremiumOnly = false
     })
-
+    -- Actual code
     FarmTab:AddToggle({
         Name = "Create Best Summer Pet",
         Default = false,
@@ -19,7 +19,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
             _G.autoTap = Value
             if _G.autoTap then
                 while _G.autoTap do
-                    -- Your code to repeatedly create pets here
+                    -- Create pets here
                     local args = {
                         [1] = "CraftPet",
                         [2] = {
@@ -70,7 +70,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
             _G.autoTap = Value
             if _G.autoTap then
                 while _G.autoTap do
-                    -- Your code to repeatedly create pets here
+                    -- Code to create pets
                     local args = {
                         [1] = "CraftPet",
                         [2] = {
@@ -114,5 +114,19 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
         end
     })
 
-    OrionLib:Init()
+FarmTab:AddToggle({
+        Name = "Fast Autoclick",
+        Default = false,
+    Callback = function(Value)
+        getgenv().autoclick = Value
+        if getgenv().autoclick then
+            while getgenv().autoclick do
+                workspace:WaitForChild("de6oe"):WaitForChild("r31g3"):FireServer()
+                wait(0)
+            end
+        end
+    end
+})
+
+OrionLib:Init()
 end
